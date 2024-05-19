@@ -1,0 +1,24 @@
+{
+	"name": "Stg_event_trigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "CopydataFromBlobToDatalake_STG_Trg",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/population/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/3d159d28-1970-4cf2-a41e-560ebe96b370/resourceGroups/Vikasvmrg/providers/Microsoft.Storage/storageAccounts/vsstg002",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
